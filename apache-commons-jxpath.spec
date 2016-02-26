@@ -7,7 +7,7 @@
 
 Name:             %{?scl_prefix}%{pkg_name}
 Version:          1.3
-Release:          20.13%{?dist}
+Release:          20.14%{?dist}
 Summary:          Simple XPath interpreter
 
 License:          ASL 2.0
@@ -17,7 +17,7 @@ Patch0:           %{short_name}-mockrunner.patch
 BuildArch:        noarch
 
 BuildRequires:    %{?scl_prefix_java_common}javapackages-tools
-BuildRequires:    %{?scl_prefix_java_common}maven-local
+BuildRequires:    %{?scl_prefix}maven-local
 BuildRequires:    %{?scl_prefix}apache-commons-parent >= 26-7
 BuildRequires:    %{?scl_prefix}maven-antrun-plugin
 BuildRequires:    %{?scl_prefix}maven-assembly-plugin
@@ -74,6 +74,9 @@ set -e -x
 %doc LICENSE.txt NOTICE.txt
 
 %changelog
+* Mon Feb 08 2016 Michal Srb <msrb@redhat.com> - 1.3-20.14
+- Fix BR on maven-local & co.
+
 * Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 1.3-20.13
 - maven33 rebuild #2
 
